@@ -1,0 +1,67 @@
+.modal-x {
+  display: none
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modal-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+.modal .modal-content {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal .modal-content .modal-header {
+  padding: 10px;
+}
+.modal .modal-content .modal-footer {
+  border-top:1px solid rgba(100, 100, 100, 0.3);
+  padding: 10px;
+}
+.modal .modal-content .modal-body {
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.modal .modal-content.modal-info .modal-header,
+.modal .modal-content.modal-info .modal-footer button {
+  background-color: blue;
+  color: white;
+}
+
+.modal .modal-content.modal-danger .modal-header,
+.modal .modal-content.modal-danger .modal-footer button {
+  background-color: red;
+  color: white;
+}
+
+.modal .modal-content.modal-success .modal-header,
+.modal .modal-content.modal-success .modal-footer button {
+  background-color: green;
+  color: white;
+}
+
+/*----------*/
+button.button {
+  cursor: pointer;
+  border: 1px solid transparent;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>dialog</title>
+    <script type="text/javascript" src="js/dialog.js"></script>
+    <link rel="stylesheet" href="css/dialog.css" />
+  </head>
+  <body>
+    <button id="button1" class="button">警告</button>
+    <button id="button2" class="button">確認</button>
+
+    <script>
+      document.querySelector('#button1').addEventListener(
+        'click',
+        async () => {
+          await Dialog.alert('警告でーす：1回目')
+
+          await Dialog.alert('警告でーす：2回目')
+        },
+        false
+      )
+
+      document.querySelector('#button2').addEventListener(
+        'click',
+        async () => {
+          const r = await Dialog.confirm('登録するでー')
+
+          if (r) {
+            await Dialog.success('登録したでー')
+          } else {
+            await Dialog.alert('キャンセルしたでー')
+          }
+        },
+        false
+      )
+    </script>
+  </body>
+</html>
