@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>dialog</title>
     <script type="text/javascript" src="js/dialog.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
     <link rel="stylesheet" href="css/dialog.css" />
   </head>
   <body>
@@ -13,10 +14,20 @@
     <button id="button2" class="button">確認</button>
 
     <script>
+      function wait(timeMills) {
+        return new Promise(resolve => {
+          setTimeout(() => resolve(), timeMills)
+        })
+      }
+
       document.querySelector('#button1').addEventListener(
         'click',
         async () => {
           await Dialog.alert('警告でーす：1回目')
+
+          Loading.show()
+          await wait(2000)
+          Loading.dissmiss()
 
           await Dialog.alert('警告でーす：2回目')
         },
@@ -29,6 +40,10 @@
           const r = await Dialog.confirm('登録するでー')
 
           if (r) {
+            Loading.show()
+            await wait(2000)
+            Loading.dissmiss()
+
             await Dialog.success('登録したでー')
           } else {
             await Dialog.alert('キャンセルしたでー')

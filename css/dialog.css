@@ -1,5 +1,5 @@
 .modal-x {
-  display: none
+  display: none;
 }
 .modal {
   position: fixed;
@@ -33,7 +33,7 @@
   padding: 10px;
 }
 .modal .modal-content .modal-footer {
-  border-top:1px solid rgba(100, 100, 100, 0.3);
+  border-top: 1px solid rgba(100, 100, 100, 0.3);
   background-color: white;
   padding: 10px;
 }
@@ -43,8 +43,8 @@
   flex-grow: 1;
 }
 
-.modal .modal-content .modal-footer button.button:not(:last-child){
-  margin-right:10px;
+.modal .modal-content .modal-footer button.button:not(:last-child) {
+  margin-right: 10px;
 }
 
 .modal .modal-content.modal-info .modal-header,
@@ -69,4 +69,25 @@
 button.button {
   cursor: pointer;
   border: 1px solid transparent;
+}
+
+/*----------*/
+.loader-mark {
+  height: 50px;
+  width: 50px;
+  border: 4px solid white;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-radius: 100000px;
+  animation: rotation 0.5s linear infinite;
+  margin: auto;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
