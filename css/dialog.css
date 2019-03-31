@@ -24,7 +24,6 @@
   position: relative;
   width: 500px;
   height: 300px;
-  background-color: white;
 
   display: flex;
   flex-direction: column;
@@ -35,27 +34,33 @@
 }
 .modal .modal-content .modal-footer {
   border-top:1px solid rgba(100, 100, 100, 0.3);
+  background-color: white;
   padding: 10px;
 }
 .modal .modal-content .modal-body {
+  background-color: white;
   padding: 10px;
   flex-grow: 1;
 }
 
+.modal .modal-content .modal-footer button.button:not(:last-child){
+  margin-right:10px;
+}
+
 .modal .modal-content.modal-info .modal-header,
-.modal .modal-content.modal-info .modal-footer button {
+.modal .modal-content.modal-info .modal-footer button.button {
   background-color: blue;
   color: white;
 }
 
 .modal .modal-content.modal-danger .modal-header,
-.modal .modal-content.modal-danger .modal-footer button {
+.modal .modal-content.modal-danger .modal-footer button.button {
   background-color: red;
   color: white;
 }
 
 .modal .modal-content.modal-success .modal-header,
-.modal .modal-content.modal-success .modal-footer button {
+.modal .modal-content.modal-success .modal-footer button.button {
   background-color: green;
   color: white;
 }
